@@ -3,10 +3,12 @@
 mkdir _site
 cp index.html _site/
 
-for d in 20* ; do
+lastd=
+for d in `ls 20* | sort`; do
 	if [ ! -d $d ]; then continue; fi
 	cd $d
 	echo "============= $d ==================="
+	lastd=$d
 	
 	echo "=== bundle install"
 	bundle install
@@ -18,3 +20,8 @@ for d in 20* ; do
 	echo "============= $d done ==================="
 	cd ..
 done
+
+if [ "$lastd" != "" ]; then
+  cp -Rv _site/$lastd/* _site/
+fi
+
