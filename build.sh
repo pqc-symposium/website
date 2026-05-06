@@ -1,10 +1,14 @@
 #!/bin/bash
 
+rm -r _site
 mkdir _site
 cp index.html _site/
 
 lastd=
-for d in `ls 20* | sort`; do
+DIRS=`find . -maxdepth 1 -type d -name "20[0-9][0-9]" | cut -d'/' -f2 | sort `
+echo $DIRS
+
+for d in $DIRS; do
 	if [ ! -d $d ]; then continue; fi
 	cd $d
 	echo "============= $d ==================="
