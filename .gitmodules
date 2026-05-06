@@ -1,0 +1,6 @@
+[submodule "2025"]
+	path = 2025
+	url = git@github.com:pqc-symposium/eu-pqc-conference-2025
+[submodule "2027"]
+	path = 2027
+	url = git@github.com:pqc-symposium/eu-pqc-conference-2027
