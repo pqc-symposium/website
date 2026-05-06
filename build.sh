@@ -9,7 +9,7 @@ for d in 20* ; do
 	
 	bundle
 	bundle exec jekyll build
-	cp -R _site ../_site/$d
+	cp -Rv _site ../_site/$d
 	
 	cd ..
 done
