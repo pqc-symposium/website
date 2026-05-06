@@ -7,7 +7,7 @@ for d in 20* ; do
 	if [ ! -d $d ]; then continue; fi
 	cd $d
 	
-	bundle
+	bundle install
 	bundle exec jekyll build
 	cp -Rv _site ../_site/$d
 	
